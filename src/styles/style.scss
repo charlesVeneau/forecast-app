@@ -1,0 +1,126 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    background-color: #eeeeee;
+    min-height: 100%;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  #nav {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 12px;
+  
+    a {
+      font-weight: bold;
+      color: #2c3e50;
+      text-decoration: none;
+      text-transform: uppercase;
+  
+      &.router-link-exact-active {
+        color: #42b983;
+      }
+
+    }
+  }
+
+.home{
+    margin: 100px;
+}
+
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input{
+    background: transparent;
+    border: 1px solid rgba($color: #2c3e50, $alpha: 0.2);
+    border-right-width: 0;
+    padding: 10px 18px;
+    border-radius: 40px 0 0 40px;
+    font-size: 1.3em;
+    outline: none;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin-top: 100px;
+}
+.card{
+    text-align: left;
+    width: 380px;
+    padding: 12px;
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid rgba($color: #fff, $alpha: 0.2);
+    box-shadow: 6px 6px 16px 0 rgba(209, 205, 199, 0.5), -6px -6px 26px 0 rgba(255, 255, 255, 0.8)  ;
+    .mainInfo{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h1{
+            margin: 0;
+        }
+        .temp{
+            font-weight: 700;
+            font-size: 2em;
+            padding-right: 30px;
+        }
+    }
+    .logo{
+        position: absolute;
+        right: -12%;
+        top: -40px;
+    }
+}
+
+.errorMsg{
+    color: rgb(219, 92, 92);
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.searchButton{
+    background-color: #42b983;
+    color: #fff;
+    border: 1px solid rgba($color: #2c3e50, $alpha: 0.2);
+    border-left-width: 0;
+    border-radius: 0 40px 40px 0;
+    padding: 9.25px 18px 9.25px 12px;
+    &:hover{
+        background-color: #93e0bc;
+    }
+}
+
+.about{
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+    text-align: center;
+    padding: 0 30px ;
+    .title{
+        color: #42b983
+    }
+}
+
