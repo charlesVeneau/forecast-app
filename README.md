@@ -1,5 +1,7 @@
 # forecast-app
 
+A single page forecast app using vuejs and an axios call to the openweathermap API.
+
 ## Project setup
 ```
 npm install
