@@ -7,7 +7,9 @@
           name="radioSwitch"
           id="radio1"
           class="radio-switch__input"
+          value="day"
           checked
+          @change.prevent="switchMode"
         />
         <label for="radio1" class="radio-switch__label">
           <svg
@@ -39,8 +41,9 @@
           type="radio"
           name="radioSwitch"
           id="radio2"
+          value="night"
           class="radio-switch__input"
-          checked
+          @change.prevent="switchMode"
         />
         <label for="radio2" class="radio-switch__label">
           <svg
@@ -65,5 +68,58 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  },
+  methods: {
+    switchMode: function(e) {
+      if (e.target.value === "night") {
+        document.documentElement.style.setProperty(
+          "--backgroundColor",
+          "rgb(36,41,45)"
+        );
+        document.documentElement.style.setProperty("--textColor", "#eeeeee");
+        document.documentElement.style.setProperty(
+          "--borderInputColor",
+          "rgba(238, 238, 238, 0.2)"
+        );
+        document.documentElement.style.setProperty(
+          "--borderCardColor",
+          "rgba(52,59,65, 0.2)"
+        );
+        document.documentElement.style.setProperty(
+          "--upperShadowColor",
+          "rgba(52, 59, 65, 0.83)"
+        );
+        document.documentElement.style.setProperty(
+          "--bottomShadowColor",
+          "rgba(14, 15, 17, 0.51)"
+        );
+      } else {
+        document.documentElement.style.setProperty(
+          "--backgroundColor",
+          "#eeeeee"
+        );
+        document.documentElement.style.setProperty("--textColor", "#2c3e50");
+        document.documentElement.style.setProperty(
+          "--borderInputColor",
+          "rgba(44, 62, 80, 0.2)"
+        );
+        document.documentElement.style.setProperty(
+          "--borderCardColor",
+          "rgba(255,255,255, 0.2)"
+        );
+        document.documentElement.style.setProperty(
+          "--upperShadowColor",
+          "rgba(255,255,255, 0.83)"
+        );
+        document.documentElement.style.setProperty(
+          "--bottomShadowColor",
+          "rgba(209, 205, 199, 0.51)"
+        );
+      }
+    }
+  }
+};
 </script>

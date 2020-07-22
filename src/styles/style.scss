@@ -3,14 +3,15 @@
 }
 
 :root{
-    --backgroundColor : #eeeeee;
-    --textColor : #2c3e50;
+    --backgroundColor : rgb(238, 238, 238);
+    --textColor : rgb(44, 62, 80);
     --borderInputColor : rgba(44, 62, 80, 0.2);
     --warningColor: rgb(219, 92, 92);
     --borderCardColor: rgba(255,255,255, 0.2);
     --upperShadowColor: rgba(255,255,255, 0.83);
     --bottomShadowColor: rgba(209, 205, 199, 0.51);
     --green: #42b983;
+    --transitionDuration: 0.4s
 }
 
 html{
@@ -20,6 +21,7 @@ html{
 body{
     background-color: var(--backgroundColor);
     min-height: 100%;
+    transition: color var(--transitionDuration);
 }
 
 #app {
@@ -42,7 +44,7 @@ body{
       color: var(--textColor);
       text-decoration: none;
       text-transform: uppercase;
-  
+      transition: color var(--transitionDuration);
       &.router-link-exact-active {
         color: var(--green);
       }
@@ -67,6 +69,7 @@ body{
     outline: none;
     color: var(--textColor);
     text-align: center;
+    transition: all var(--transitionDuration);
 }
 
 .cards{
@@ -85,7 +88,7 @@ body{
     position: relative;
     border-radius: 12px;
     border: 1px solid var(--borderCardColor);
-    box-shadow: 6px 6px 16px 0 var(--bottomShadowColor), -6px -6px 26px 0 white;
+    box-shadow: 6px 6px 16px 0 var(--bottomShadowColor), -6px -6px 26px 0 var(--upperShadowColor);
     .mainInfo{
         display: flex;
         align-items: center;
@@ -119,6 +122,7 @@ body{
     border-left-width: 0;
     border-radius: 0 40px 40px 0;
     padding: 9.25px 18px 9.25px 12px;
+    transition: all var(--transitionDuration);
     &:hover{
         background-color: #93e0bc;
     }
@@ -145,10 +149,12 @@ body{
     padding: 4px;
     border-radius: 50em;
     border: 1px solid var(--borderInputColor);
+    transition: border var(--transitionDuration);
 }
 
 .radio-switch__input{
     display: none;
+    transition: color var(--transitionDuration);
     &:checked ~ .radio-switch__marker {
         transform: translateX(100%);
     }
@@ -185,5 +191,6 @@ body{
     height: 100%;
     background-color: var(--textColor);
     border-radius: 50em;
-    transition: transform 0.4s;
+    transition: all 0.4s;
+
 }

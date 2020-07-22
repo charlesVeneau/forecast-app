@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <!-- <NightSwitch /> -->
     <div class="input-container">
       <input
         type="text"
@@ -36,13 +35,11 @@
 
 <script>
 import Card from "@/components/Card.vue";
-// import NightSwitch from "@/components/NightSwitch.vue";
 import axios from "axios";
 
 export default {
   components: {
-    Card,
-    // NightSwitch
+    Card
   },
   data() {
     return {
