@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <!-- <NightSwitch /> -->
     <div class="input-container">
       <input
         type="text"
@@ -27,9 +28,7 @@
       </button>
     </div>
     <div class="cards">
-      <div v-if="forecast">
-        <Card :forecast="forecast" />
-      </div>
+      <Card v-if="forecast" :forecast="forecast" />
       <div v-else class="errorMsg">City not found!</div>
     </div>
   </div>
@@ -37,11 +36,13 @@
 
 <script>
 import Card from "@/components/Card.vue";
+// import NightSwitch from "@/components/NightSwitch.vue";
 import axios from "axios";
 
 export default {
   components: {
-    Card
+    Card,
+    // NightSwitch
   },
   data() {
     return {
@@ -69,6 +70,6 @@ export default {
         })
         .catch(e => console.log(e), (this.forecast = null));
     }
-  },
+  }
 };
 </script>

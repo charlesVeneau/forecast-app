@@ -10,13 +10,13 @@
       alt="logo"
     />
     <div class="mainInfo">
-      <h1>{{ this.forecast.name }}</h1>
-      <span class="temp">{{ this.forecast.main.temp }}°c</span>
+      <h1>{{ this.forecast.name }}, {{ this.forecast.sys.country }}</h1>
+      <span class="temp">{{ Math.round(this.forecast.main.temp) }}°c</span>
     </div>
     <!-- <span>{{ time.date }}</span> -->
     <!-- <span>{{ time.time }}</span> -->
-    <span> min: {{ this.forecast.main.temp_min }}°c</span>
-    <span> max: {{ this.forecast.main.temp_max }}°c</span>
+    <span> min: {{ Math.round(this.forecast.main.temp_min) }}°c</span>
+    <span> max: {{ Math.round(this.forecast.main.temp_max) }}°c</span>
   </div>
 </template>
 
