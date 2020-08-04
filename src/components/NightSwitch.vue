@@ -90,7 +90,7 @@ export default {
         );
         document.documentElement.style.setProperty(
           "--upperShadowColor",
-          "rgba(52, 59, 65, 0.83)"
+          "rgba(52, 59, 65, 0.63)"
         );
         document.documentElement.style.setProperty(
           "--bottomShadowColor",

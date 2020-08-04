@@ -3,10 +3,10 @@
     <div class="input-container">
       <input
         type="text"
-        placeholder="Type a City"
+        placeholder="Entrez une ville"
         class="input"
         v-model="citySearchString"
-        @change="getForecast"
+        @keypress="testLodash"
       />
       <button class="searchButton" @click.prevent="getForecast">
         <svg
@@ -36,6 +36,7 @@
 <script>
 import Card from "@/components/Card.vue";
 import axios from "axios";
+import _ from "lodash";
 
 export default {
   components: {
@@ -50,7 +51,7 @@ export default {
   created() {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=paris,fr&appid=${process.env.VUE_APP_OPENWEATHER}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=paris,fr&appid=${process.env.VUE_APP_OPENWEATHER}&units=metric&lang=fr`
       )
       .then(res => {
         this.forecast = res.data;
@@ -60,13 +61,18 @@ export default {
     getForecast() {
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${this.citySearchString}&appid=${process.env.VUE_APP_OPENWEATHER}&units=metric`
+          `https://api.openweathermap.org/data/2.5/weather?q=${this.citySearchString}&appid=${process.env.VUE_APP_OPENWEATHER}&units=metric&lang=fr`
         )
         .then(res => {
           this.forecast = res.data;
         })
         .catch(e => console.log(e), (this.forecast = null));
-    }
+    },
+    testLodash() {
+      _.debounce(() => {
+      console.log('I only get fired once every two seconds, max!')
+    }, 2000);
+      console.log("keypress")}
   }
 };
 </script>

@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <NightSwitch />
-    <router-view />
+    <transition name="slideX-fade" mode="out-in">
+      <router-view />
+    </transition>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Accueil</router-link> |
+      <router-link to="/about">A Propos</router-link>
     </div>
   </div>
 </template>
@@ -19,4 +21,7 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+
+</style>

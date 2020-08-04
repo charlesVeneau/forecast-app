@@ -1,10 +1,10 @@
 <template>
   <div class="about">
-    <h1 class="title">About</h1>
+    <h1 class="title">A Propos</h1>
     <p>
       A simple forecast web app made with
-      <a href="https://vuejs.org/">Vuejs</a> and
-      <a href="https://openweathermap.org/">Openweathermap</a> API
+      <a href="https://vuejs.org/" class="links">Vuejs</a> and
+      <a href="https://openweathermap.org/" class="links">Openweathermap</a> API
     </p>
     <p>The api calls are made with axios.</p>
     <p>You can find the code here : Github</p>
