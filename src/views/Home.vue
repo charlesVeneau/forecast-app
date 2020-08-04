@@ -6,25 +6,8 @@
         placeholder="Entrez une ville"
         class="input"
         v-model="citySearchString"
-        @keypress="testLodash"
+        @input="debounceForecast()"
       />
-      <button class="searchButton" @click.prevent="getForecast">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="feather feather-search"
-        >
-          <circle cx="11" cy="11" r="7" />
-          <line x1="21" y1="21" x2="16.65" y2="16.65" />
-        </svg>
-      </button>
     </div>
     <div class="cards">
       <Card v-if="forecast" :forecast="forecast" />
@@ -58,6 +41,9 @@ export default {
       });
   },
   methods: {
+    debounceForecast: _.debounce(function(){
+      this.getForecast()
+    }, 600),
     getForecast() {
       axios
         .get(
@@ -68,11 +54,7 @@ export default {
         })
         .catch(e => console.log(e), (this.forecast = null));
     },
-    testLodash() {
-      _.debounce(() => {
-      console.log('I only get fired once every two seconds, max!')
-    }, 2000);
-      console.log("keypress")}
+  
   }
 };
 </script>
