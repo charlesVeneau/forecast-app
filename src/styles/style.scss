@@ -36,9 +36,8 @@ body{
   #nav {
     position: fixed;
     bottom: 0;
-    text-align: center;
     width: 100%;
-    margin-bottom: 12px;
+    margin: 0 auto 12px auto;
   
     a {
       font-weight: bold;
@@ -144,7 +143,6 @@ body{
 
 .switchRadio{
     text-align: right;
-    margin-right: 20px;
 }
 
 .radio-switch{
